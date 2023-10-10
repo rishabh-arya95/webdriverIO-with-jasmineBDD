@@ -7,7 +7,8 @@ export const config: WebdriverIO.Config = {
       key: process.env.LT_ACCESS_KEY,
       logFile : './log/api.log',
       services: [
-          ['lambdatest'],
+          ['lambdatest']
+      ],
 
         capabilities: [
           {
