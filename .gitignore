@@ -6,3 +6,8 @@ test/reports/*
 package-lock.json
 allure-report/*
 logs/*
+hyperexecute
+hyperexecute-cli.log
+hyperexecute-code*
+.hyperexecute
+.updatedhyperexecute.yaml

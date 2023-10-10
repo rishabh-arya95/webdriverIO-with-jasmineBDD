@@ -1,0 +1,30 @@
+---
+version: 0.2
+globalTimeout: 150
+testSuiteTimeout: 150
+testSuiteStep: 150
+
+runson: win
+
+autosplit: true
+retryOnFailure: true
+
+runtime:
+  language: node
+  version: "18"
+
+# maxRetries: 1
+concurrency: 7
+pre:
+  - node -v
+  - npm install
+
+post:
+  - echo 'Done'
+
+
+framework:
+  name: wdio/jasmine
+  discoveryType: spec #suite #test #wdiosuite
+  defaultReports: false
+  flags: ["wdio.lambdatest.conf.ts"]
