@@ -4,27 +4,28 @@ globalTimeout: 150
 testSuiteTimeout: 150
 testSuiteStep: 150
 
-runson: win
+runson: linux
 
 autosplit: true
 retryOnFailure: true
 
 runtime:
   language: node
-  version: "18"
+  version: "18.18.2"
 
-# maxRetries: 1
+maxRetries: 1
 concurrency: 7
 pre:
   - node -v
   - npm install
+  - curl ipinfo.io
 
 post:
   - echo 'Done'
 
 
 framework:
-  name: wdio/jasmine
-  discoveryType: spec #suite #test #wdiosuite
+  name: wdio/mocha
+  discoveryType: suite #suite #test #wdiosuite #file
   defaultReports: false
   flags: ["wdio.lambdatest.conf.ts"]
